@@ -55,16 +55,17 @@ img:hover{
   cursor: pointer;
 }
 
-table{
+/* table{
   min-width: 700px;
   border: 1px solid white ;
   align-items: left;
-}
+} */
 
 td{
-  border-right: 1px solid white ;
-  border-top: 1px solid white ;
+  /* border-right: 1px solid white ;
+  border-top: 1px solid white ; */
   padding: 10px;
+  border: 1px solid;
 }
 
 .joke-container{
@@ -73,7 +74,7 @@ td{
 }
 
 .joke-container p{
-  background-color: grey;
+  background-color: #404040;
   min-height: 30px;
   padding: 10px;
   border-radius: 20px;
@@ -83,4 +84,20 @@ td{
 
 .joke-container button{
   margin-left: 300px;
+}
+
+.selected-project{
+  border: 2px solid green;
+}
+
+.dog-container{
+  display: block;
+  margin-left: 300px;
+}
+
+.dog-img{
+  margin: auto;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
 }
