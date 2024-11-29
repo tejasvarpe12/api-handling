@@ -66,3 +66,21 @@ td{
   border-top: 1px solid white ;
   padding: 10px;
 }
+
+.joke-container{
+  display: block;
+  margin-left: 300px;
+}
+
+.joke-container p{
+  background-color: grey;
+  min-height: 30px;
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.joke-container button{
+  margin-left: 300px;
+}
