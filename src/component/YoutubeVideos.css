@@ -1,0 +1,89 @@
+
+/* Main container for the page */
+.videos-main-container {
+    max-width: 1200px;
+    margin: 10px auto;
+    margin-left: 150px;
+    padding: 0 15px;
+}
+
+/* Title of the page */
+.videos-heading {
+    margin-left: 400px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Grid for video thumbnails */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-right: 0;
+}
+
+/* Individual video container */
+.video-container {
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 40px; 
+    border: none;
+}
+
+.video-container:hover {
+    transform: scale(1.05); /* Hover effect */
+}
+
+/* Video thumbnail */
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    /* border-bottom: 1px solid #ccc; */
+}
+
+/* Title below the thumbnail */
+.video-title {
+    color: #000;
+    text-align: center;
+    line-height: 1.3;
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+
+/* Loading and error states */
+.loading, .error {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+}
+
+/* Optional: responsive design */
+@media screen and (max-width: 768px) {
+    .videos-heading {
+        font-size: 2rem;
+    }
+    
+    .videos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .videos-heading {
+        font-size: 1.5rem;
+    }
+    
+    .video-title {
+        font-size: 1rem;
+    }
+}
+
