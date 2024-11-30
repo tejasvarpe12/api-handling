@@ -27,7 +27,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className='app-container'>
       <div className="projects">
         <button onClick={() => setSelectedProject("userDetails")} className={selectedProject === "userDetails" ? "selected-project" : "" }>User Details</button>
         <button onClick={() => setSelectedProject("randomJoke")} className={selectedProject === "randomJoke" ? "selected-project" : ""} >Random Joke</button>
@@ -35,8 +35,9 @@ function App() {
         <button onClick={() => setSelectedProject("randomDog")} className={selectedProject === "randomDog" ? "selected-project" : ""}> Random Dog</button>
         <button onClick={() => setSelectedProject("youtubeVideos")} className={selectedProject === "youtubeVideos" ? "selected-project" : ""} >Youtube Videos</button>
       </div>
+      <hr />
       {renderSelectProject()}
-    </>
+    </div>
   )
   
 }
