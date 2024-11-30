@@ -10,15 +10,21 @@ function YoutubeVideos() {
     const fetchVideos = async () => {
         console.log("Fetching data from API...")
         try{
-            const response = await fetch('https://api.freeapi.app/api/v1/public/youtube/videos')
-            if(!response.ok){
-                throw new Error("Error occured while fetching the videos...")
-            }
-            
-            const data = await response.json();
-            setVideos(data.data.data)
-            console.log("API Data Called-->", data)
-            setLoading(false)
+
+            setLoading(true);
+            setError(null);
+            setTimeout( async () => {
+                
+                const response = await fetch('https://api.freeapi.app/api/v1/public/youtube/videos')
+                if(!response.ok){
+                    throw new Error("Error occured while fetching the videos...")
+                }
+                
+                const data = await response.json();
+                setVideos(data.data.data)
+                console.log("API Data Called-->", data)
+                setLoading(false)
+            }, 1000);
             
         }catch(eror){
             setError("Error occurred while fetching videos");
@@ -35,7 +41,7 @@ function YoutubeVideos() {
     },[videos])
 
     if(loading){
-        return <div>Loading...</div>
+        return <div style={{marginLeft: "700px", marginTop: "250px"}}>Loading...</div>
     }
     if(error){
         return <div>{error}</div>

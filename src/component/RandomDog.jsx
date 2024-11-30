@@ -6,7 +6,11 @@ function RandomDog() {
     const [error, setError] = useState(null);
 
     const fetchDog = async () => {
-        try{
+        try{            
+            setLoading(true);
+            setError(null);
+            setTimeout(async () => { 
+
             const response = await fetch('https://api.freeapi.app/api/v1/public/dogs/dog/random');
             if(!response.ok){
                 throw new Error("Error occured...!");
@@ -14,10 +18,13 @@ function RandomDog() {
             const data = await response.json();
             setDog(data.data)
             setLoading(false)
+
+        }, 1000);
+        
         }catch(error){
             setError("Error while loading dog's data")
             console.log("Error");            
-            setError(false)
+            setLoading(false);
         }
     }
     
@@ -26,7 +33,7 @@ function RandomDog() {
     },[])
 
     if(loading){
-        return <div>Loading...</div>
+        return <div style={{marginLeft: "700px", marginTop: "250px"}}>Loading...</div>
     }
     if(error){
         return <div>{error}</div>
@@ -61,6 +68,7 @@ function RandomDog() {
                 </table>
             </>
         }
+        <button style={{margin: '20px', marginLeft: '400px'}} onClick={fetchDog}>Fetch New Dag</button>
     </div>
   )
 }
